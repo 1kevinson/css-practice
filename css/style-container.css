@@ -1,0 +1,48 @@
+/*region  CSS reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*endregion */
+
+/*
+  When `html` is given`height: 100%`,
+  it takes up the height of the viewport.
+  That serves as our base.
+  The `body` tag's 100% is based on that base size.
+
+  When we get to our wrapper, we want to use`min-height`.
+  This way, the minimum size is equal to the viewport height,
+  but it can overflow and take up more space if required
+  by the content.
+*/
+html, body {
+  height: 99%;
+}
+
+.demo-container {
+  height: 100%;
+  padding: 15px;
+  overflow: auto;
+  max-width: 100%;
+  position: relative;
+  border-radius: 3px;
+  border: 3px solid hsl(0deg 1% 58% / 0.55);
+  border-inline-end: 0;
+}
+
+.resizer {
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: hsla(0, 73%, 80%, 0.85);
+
+  &:hover {
+    cursor: ew-resize;
+  }
+}

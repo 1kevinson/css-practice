@@ -1,0 +1,6 @@
+.max-width-wrapper {
+  max-width: 350px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  font-family: sans-serif;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <title>CSS for JS developers</title>
+    <link rel="stylesheet" href="css/style-container.css">
+    <link rel="stylesheet" href="css/style-helpers.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<div class="demo-container">
+    <div class="resizer"></div>
+
+    <!-- Demo -->
+    <div class="box"></div>
+
+</div>
+
+<script>
+    const resizable = document.querySelector('.demo-container');
+    const resizer = document.querySelector('.resizer');
+
+    resizer.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+
+        window.addEventListener('mousemove', resize);
+        window.addEventListener('mouseup', stopResize);
+    });
+
+    function resize(event) {
+        const width = event.pageX - resizable.getBoundingClientRect().left;
+        resizable.style.width = width + 'px';
+    }
+
+    function stopResize() {
+        window.removeEventListener('mousemove', resize);
+        window.removeEventListener('mouseup', stopResize);
+    }
+</script>
+</body>
+
+</html>
